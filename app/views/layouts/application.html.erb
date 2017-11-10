@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stars</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <%= favicon_link_tag("https://maxcdn.icons8.com/Share/icon/Messaging//star1600.png") %>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "InfoPeople", root_path, class: "navbar-brand" %>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>  <%= link_to root_path do %> 
+                <i class="fa fa-home fa-2x"></i>
+              <% end %>
+        </li>
+        <li>
+          <%= link_to new_star_path  do %>
+            <i class="fa fa-pencil-square-o fa-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to busca_path do %>
+            <i class="fa fa-search fa-2x"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  	<div class="container">
+    	<%= yield %>
+  	</div>
+  </body>
+</html>

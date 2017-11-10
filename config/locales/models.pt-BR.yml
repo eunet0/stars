@@ -1,0 +1,12 @@
+'pt-BR':
+  activerecord:
+    models:
+      star:
+        one: Estrela
+        other: Estrelas
+    attributes:
+      star:
+        name: "Nome"
+        bio: "Biografia"
+        image: "Imagem"
+     

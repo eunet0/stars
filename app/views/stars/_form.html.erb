@@ -1,0 +1,46 @@
+<h1><%= locals %> estrela</h1>
+
+<%= form_for(star) do |f| %>
+  <% if star.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(star.errors.count, "error") %> prohibited this star from being saved:</h2>
+
+      <ul>
+      <% star.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="from-group">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+ 
+    <div class="field">
+      <%= f.label :bio %>
+      <%= f.text_area :bio, autocomplete: true, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.text_field :image, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :link %>
+      <%= f.text_field :link, class: "form-control" %>
+    </div>
+
+    <div class="field"> 
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :title  %>
+    </div>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+<% end %>

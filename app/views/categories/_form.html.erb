@@ -1,0 +1,7 @@
+<h3><%= locals %></h3>
+
+<%= form_for @category do |f| %>
+	<p><%= f.label :title %></p>
+	<p><%= f.text_field :title %></p>
+	<p><%= f.submit 'Salvar' %></p>
+<% end %>

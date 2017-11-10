@@ -1,0 +1,11 @@
+<h4 class="text-center">Pesquisar</h4>
+
+<%= form_tag(buscado_path, :method => "get", class: "form-group") do %>
+	<p>
+		<%= text_field_tag :name, params[:name], placeholder: "Quem você está buscando ?", class: "form-control" %>
+	</p>
+
+ 	<p> 
+ 		<%= submit_tag "Buscar", class: "btn btn-info" %>
+	</p>
+<% end %>

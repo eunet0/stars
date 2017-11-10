@@ -1,0 +1,17 @@
+<div class="home">
+
+	<h1 class="text-center principal"> Bem-vindo a Página das estrelas </h1>
+	<br>
+
+	<center>
+		<%= image_tag( "http://cdn.everythingaudrey.com/wp-content/uploads/2016/03/Marilyn-Monroe-Facts-18.jpg", 
+		class: "img img-rounded img-responsive img-fluid", size: "600") %>
+	</center>
+
+	<ul class="ext-center">
+		<li> <p> <%= link_to 'Listar Estrelas', stars_path %> </p>  </li>
+		<li> <p> <%= link_to 'Adicionar Estrela', new_star_path %> </p>  </li>
+		<li> <p> <%= link_to 'Buscar Estrela', busca_path %> </p>  </li>
+	</ul>
+
+</div>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to image_tag("back.svg", size: "30", class: "img img-responsive"), :back %> Voltar
+
+<% @star.each do |s| %>
+
+<% if !s.image.blank? %>
+<p> <%= image_tag(s.image, class: 'img img-responsive img-rounded', size: '300') %>
+</p>
+<% end %>
+
+<p>
+  <strong>Nome:</strong>
+  <%= s.name.capitalize %>
+</p>
+
+<p>
+  <strong>Biografia:</strong>
+  <%= s.bio %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= s.category.title%>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= link_to s.link %>
+</p>
+
+<p> <strong> Outras personalidades que podem interessar: </strong> </p>
+
+<% @stars.each do |s| %>
+  <% if s != @star %>
+    <p> <%= link_to s.name, s %> </p>
+  <% end %>
+<% end %>
+
+<% end %>
+
+<%= link_to 'Edit', edit_star_path(@star) %> |
+<%= link_to 'Back', stars_path %>

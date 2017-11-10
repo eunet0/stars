@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<% if !@star.image.blank? %>
+<p>=  <%= image_tag(@star.image, class: 'img img-responsive img-rounded', size: '300') %>
+</p>
+<% end %>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @star.name.capitalize %>
+</p>
+
+<p>
+  <strong>Biografia:</strong>
+  <%= @star.bio %>
+</p>
+
+<p>
+	<strong>Categoria:</strong>
+	<%= @star.category.title%>
+</p>
+
+<p>
+	<strong>Link:</strong>
+	<%= link_to @star.link %>
+</p>
+
+<p> <strong> Outras personalidades que podem interessar: </strong> </p>
+
+<% @stars.each do |s| %>
+  <% if s != @star %>
+    <p> <%= link_to s.name, s %> </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_star_path(@star) %> |
+<%= link_to 'Back', stars_path %>

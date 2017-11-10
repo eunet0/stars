@@ -1,0 +1,12 @@
+<p><%= link_to "Adicionar categoria", new_category_path %></p>
+
+
+<p>Categorias</p>
+<% @categories.each do |c| %>
+<ul>
+	<li> id: <%= c.id %> </li>
+	<li> título: <%= c.title %></li>
+	<li> <%= link_to 'Excluir', c, method: :delete %> </li>
+</ul>
+
+<% end %>
